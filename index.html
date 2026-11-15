@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MailPilot AI - Intelligent email management dashboard for personal assistants." />
+  <title>MailPilot AI | Smart Email Management</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">M</div>
+        <div>
+          <h2>MailPilot<span>AI</span></h2>
+          <small>Smart Email Workspace</small>
+        </div>
+      </div>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="navigation">
+        <button class="nav-item active" data-view="overview">▦ <span>Overview</span></button>
+        <button class="nav-item" data-view="inbox">✉ <span>Smart Inbox</span><b id="inboxCount">6</b></button>
+        <button class="nav-item" data-view="attention">◎ <span>Client Attention</span><b class="attention-count">2</b></button>
+        <button class="nav-item" data-view="accounts">▣ <span>Email Accounts</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="ai-status"><span class="status-dot"></span><div><strong>AI Assistant Active</strong><small>Demo analysis mode</small></div></div>
+        <div class="profile"><div class="avatar">PA</div><div><strong>Personal Assistant</strong><small>Workspace Admin</small></div></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+        <div><p class="eyebrow">MONDAY, NOVEMBER 16, 2026</p><h1 id="pageTitle">Overview</h1></div>
+        <div class="top-actions"><span class="live-label"><i></i> Demo workspace</span><button class="icon-button" id="notificationButton" aria-label="Notifications">♧</button></div>
+      </header>
+
+      <section class="view active-view" id="overviewView">
+        <div class="welcome-row"><div><h2>Your inbox, under control.</h2><p>Here is what needs your attention today.</p></div><button class="primary-button" data-go="inbox">Open smart inbox →</button></div>
+
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total emails</span><span class="stat-icon purple">✉</span></div><strong id="totalEmails">06</strong><small>Across connected demo accounts</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Need your reply</span><span class="stat-icon orange">↗</span></div><strong id="clientReplies">02</strong><small>Require client attention</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Assistant can handle</span><span class="stat-icon green">✓</span></div><strong id="assistantReplies">03</strong><small>Routine communication</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Awaiting response</span><span class="stat-icon blue">◷</span></div><strong id="waitingCount">01</strong><small>Follow-up may be needed</small></article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel">
+            <div class="panel-heading"><div><h3>Priority emails</h3><p>Messages that need a decision</p></div><button class="text-button" data-go="inbox">View all →</button></div>
+            <div id="priorityList" class="priority-list"></div>
+          </section>
+          <section class="panel activity-panel">
+            <div class="panel-heading"><div><h3>AI activity</h3><p>How MailPilot organizes your inbox</p></div><span class="ai-pill">✦ AI</span></div>
+            <div class="activity-item"><span class="activity-icon">✦</span><div><strong>Smart classification</strong><p>Emails categorized by who should respond.</p></div></div>
+            <div class="activity-item"><span class="activity-icon">◈</span><div><strong>Priority detection</strong><p>Important messages highlighted for review.</p></div></div>
+            <div class="activity-item"><span class="activity-icon">✎</span><div><strong>Reply suggestions</strong><p>Drafts prepared for assistant review.</p></div></div>
+            <div class="demo-note">Demo mode: sample emails and simulated AI insights.</div>
+          </section>
+        </div>
+      </section>
+
+      <section class="view" id="inboxView">
+        <div class="section-intro"><div><h2>Smart Inbox</h2><p>All conversations, intelligently organized.</p></div><button class="primary-button" id="addEmailButton">+ Add demo email</button></div>
+        <div class="inbox-toolbar">
+          <div class="search-box"><span>⌕</span><input type="search" id="searchInput" placeholder="Search emails, clients or subjects..." /></div>
+          <select id="filterSelect" aria-label="Filter emails"><option value="all">All emails</option><option value="client">Client should reply</option><option value="assistant">Assistant should reply</option><option value="waiting">Awaiting response</option></select>
+        </div>
+        <div class="inbox-layout">
+          <div class="email-list panel" id="emailList"></div>
+          <article class="email-detail panel" id="emailDetail"><div class="empty-detail"><span>✉</span><h3>Select an email</h3><p>Choose a conversation to see its AI analysis and suggested next action.</p></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="attentionView">
+        <div class="section-intro"><div><h2>Client Attention</h2><p>A focused view of emails that require personal attention.</p></div><span class="attention-tag">Personal review required</span></div>
+        <div class="attention-banner"><span>◎</span><div><strong>Keep your focus on what matters.</strong><p>These messages are marked as requiring a response or decision from the client.</p></div></div>
+        <div id="attentionList" class="attention-list"></div>
+      </section>
+
+      <section class="view" id="accountsView">
+        <div class="section-intro"><div><h2>Email Accounts</h2><p>Manage the accounts represented in this demo workspace.</p></div><button class="primary-button" id="connectButton">+ Add demo account</button></div>
+        <div class="account-grid" id="accountGrid"></div>
+        <div class="demo-note wide-note">Account connection is simulated. Real Gmail/Outlook OAuth is not enabled in this prototype.</div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
