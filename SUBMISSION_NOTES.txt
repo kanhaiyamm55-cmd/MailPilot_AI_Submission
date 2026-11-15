@@ -1,0 +1,44 @@
+
+MAILPILOT AI
+AI-POWERED EMAIL MANAGEMENT DASHBOARD
+
+PROJECT OVERVIEW
+MailPilot AI is a responsive email management dashboard prototype designed for personal assistants. It helps organize conversations, identify important emails, determine who should respond, and highlight messages that require personal client attention.
+
+IMPLEMENTED FEATURES
+1. Overview dashboard and email statistics.
+2. Smart inbox with sample email conversations.
+3. Search by sender, subject, and email content.
+4. Filters for client reply, assistant reply, and awaiting response.
+5. Client Attention section.
+6. Email detail view with AI-style summary.
+7. Response responsibility recommendation.
+8. Suggested reply editing and copy functionality.
+9. Add sample email interaction.
+10. Add demo email account interaction.
+11. Responsive mobile-friendly layout.
+
+TECHNOLOGIES
+HTML5
+CSS3
+Vanilla JavaScript
+
+HOW TO TEST
+1. Open the deployed website.
+2. Navigate through Overview, Smart Inbox, Client Attention, and Email Accounts.
+3. Search for an email.
+4. Apply different inbox filters.
+5. Open a conversation and inspect its AI insights.
+6. Edit and copy the suggested reply.
+7. Add a demo email and a demo account.
+8. Test the layout on a mobile screen.
+
+PROTOTYPE DISCLOSURE
+This is a frontend demonstration prototype.
+Email accounts and sample conversations are simulated.
+AI classifications, summaries, and reply suggestions are predefined demonstration data.
+Real email authentication, live AI API integration, database storage, and email sending are not implemented.
+
+SUBMISSION
+Project: MailPilot AI
+Task: AI Full-Stack Engineer Intern
